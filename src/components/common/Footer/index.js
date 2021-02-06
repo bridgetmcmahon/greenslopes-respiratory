@@ -1,8 +1,9 @@
 import React from "react"
-import { Link } from "gatsby"
 import styled from "styled-components"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import logo from "../../../images/grs_logo.png"
-import { primaryBlue, yellow } from "../../../utils/colours"
+import { primaryBlue } from "../../../utils/colours"
+import { faEnvelope, faFax, faPhone } from "@fortawesome/free-solid-svg-icons"
 import { md } from "../../../utils/breakpoints"
 
 const Container = styled.div`
@@ -10,26 +11,79 @@ const Container = styled.div`
   padding: 1rem;
   color: #ddd;
   text-align: center;
-
-  img {
-    max-height: 3rem;
-    margin-bottom: 1rem;
-  }
+  font-size: 1.8rem;
+  line-height: 1.2;
 
   @media ${md} {
     padding: 2rem;
   }
 `
 
-const FooterLink = styled(Link)`
-  color: ${primaryBlue};
-  font-size: 1.1rem;
-  display: block;
-  padding: 0.2rem 0;
+const LogoWrapper = styled.div`
+  /* max-width: 15rem; */
+  margin: 1rem auto;
+  display: flex;
+  vertical-align: middle;
+  text-align: center;
+  display: flex;
+  align-items: center;
+
+  img {
+    margin-right: 1rem;
+    max-height: 4rem;
+    margin-bottom: 1rem;
+  }
+
+  > p {
+    margin-top: 0;
+    font-style: italic;
+    line-height: 1.15;
+    text-align: center;
+  }
 
   @media ${md} {
+    max-width: 25rem;
+  }
+`
+
+const FooterList = styled.ul`
+  list-style: none;
+  padding: 0px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 auto;
+`
+
+const FooterItem = styled.li`
+  display: flex;
+  margin-bottom: 2rem;
+  width: 100%;
+  text-align: left;
+  white-space: nowrap;
+  font-size: 1.8rem;
+  transition: 0.5s all ease;
+
+  p {
     display: inline-block;
-    white-space: nowrap;
+    margin: 0.5rem 0;
+    line-height: 1.15;
+  }
+
+  a {
+    text-decoration: none;
+    color: ${primaryBlue};
+  }
+
+  i {
+    
+  }
+
+  &:hover {
+    padding-left: 0.5rem;
+  }
+
+  @media ${md} {
     margin: 0 1rem;
     &:first-of-type {
       margin-left: 0;
@@ -40,34 +94,50 @@ const FooterLink = styled(Link)`
   }
 `
 
+const Icon = styled(FontAwesomeIcon)`
+  color: ${primaryBlue};
+  margin-right: 0.6rem;
+  color: #2664ba;
+`
+
 const Divider = styled.span`
   display: none;
 
   @media ${md} {
     display: inline-block;
-    color: ${yellow};
+    color: #e0d3de;
   }
 `
 
 const Footer = () => {
   return (
     <Container>
-      <img src={logo} alt="GRS logo" />
-      <div>
-        <FooterLink to="/services">Services</FooterLink>
-        <Divider>|</Divider>
-        <FooterLink to="/our-specialist-physicians">
-          Our specialist physicians
-        </FooterLink>
-        <Divider>|</Divider>
-        <FooterLink to="/our-clinical-sleep-psychologist">
-          Our clinical sleep psychologist
-        </FooterLink>
-        <Divider>|</Divider>
-        <FooterLink to="/appointments">Appointments</FooterLink>
-        <Divider>|</Divider>
-        <FooterLink to="/contact-us">Contact us</FooterLink>
-      </div>
+      <LogoWrapper>
+        <img src={logo} alt="GRS logo" />
+        <p>Specialists who care</p>
+      </LogoWrapper>
+      <FooterList>
+        <FooterItem>
+          <Icon icon={faEnvelope} />
+          <a href="mailto:admin@grscentre.com.au">admin@grscentre.com.au</a>
+        </FooterItem>
+        <Divider />
+        <FooterItem>
+          <Icon icon={faFax} />
+          <a href="fax:0733971499">07 3397 1499</a>
+        </FooterItem>
+        <Divider />
+        <FooterItem>
+          <Icon icon={faPhone} />
+          <a href="tel:0733971488" style={{ marginRight: "0.5rem" }}>
+            07 3397 1488
+          </a>{" "}
+          |{" "}
+          <a href="tel:0733947597" style={{ marginLeft: "0.5rem" }}>
+            07 3394 7597
+          </a>
+        </FooterItem>
+      </FooterList>
     </Container>
   )
 }

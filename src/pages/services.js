@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import Layout from "../components/common/layout"
 import Header from "../components/common/Header"
-import { sm, md } from "../utils/breakpoints"
+import { md } from "../utils/breakpoints"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faLungs,
@@ -12,6 +12,7 @@ import {
 
 const Container = styled.div`
   max-width: 96rem;
+  margin: 0 auto;
   padding: 1rem;
   display: flex;
   flex-wrap: wrap;
@@ -25,11 +26,11 @@ const Container = styled.div`
 `
 
 const Card = styled.div`
-  flex-grow: 1;
+  flex: 1 1 0px;
   background-color: white;
   box-shadow: 0px 0px 8px #f1f1f1;
   border-radius: 4px;
-  padding: 1rem;
+  padding: 2rem;
   margin: 1rem;
   min-width: 18rem;
   max-width: 40rem;
@@ -38,30 +39,30 @@ const Card = styled.div`
     cursor: pointer;
   }
 
-  h2,
   svg {
     text-align: center;
   }
 
-  h2 {
+  h3 {
     margin-bottom: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+  }
+
+  @media ${md} {
+    padding: 4rem;
   }
 `
 
 const CardDropdown = styled.div`
-  /* display: none; */
   color: #68748D;
-  /* ${props =>
-    props.isOpen &&
-    ` */
-    display: block;
-  /* `} */
 
   ul {
     list-style-type: "";
+    padding-left: 0;
     
     li {
-      padding-bottom: 0.6rem;
+      padding-bottom: 1.1rem;
     }
   }
 
@@ -72,19 +73,11 @@ const CardDropdown = styled.div`
 
 const Icon = styled.div`
   width: 100%;
-  font-size: 3rem;
+  font-size: 5rem;
   text-align: center;
 `
 
 export default function Services({ location }) {
-  // const [respiratoryOpen, setRespiratoryOpen] = useState(false)
-  // const [sleepOpen, setSleepOpen] = useState(false)
-  // const [investigationsOpen, setInvestigationsOpen] = useState(false)
-
-  // const toggleRespiratory = () => setRespiratoryOpen(!respiratoryOpen)
-  // const toggleSleep = () => setSleepOpen(!sleepOpen)
-  // const toggleInvestigations = () => setInvestigationsOpen(!investigationsOpen)
-
   return (
     <Layout location={location}>
       <Header text="Services" />
@@ -93,7 +86,7 @@ export default function Services({ location }) {
           <Icon style={{ color: "#F05D5E" }}>
             <FontAwesomeIcon icon={faLungs} />
           </Icon>
-          <h2>Respiratory</h2>
+          <h3>Respiratory</h3>
           <CardDropdown>
             <ul>
               <li>Shortness of breath</li>
@@ -109,10 +102,10 @@ export default function Services({ location }) {
         </Card>
 
         <Card>
-          <Icon style={{ color: "#F4D35E" }}>
+          <Icon style={{ color: "#578EDD" }}>
             <FontAwesomeIcon icon={faBed} />
           </Icon>
-          <h2>Sleep</h2>
+          <h3>Sleep</h3>
           <CardDropdown>
             <ul>
               <li>Sleep apnoea</li>
@@ -126,10 +119,10 @@ export default function Services({ location }) {
         </Card>
 
         <Card>
-          <Icon style={{ color: "#578EDD" }}>
+          <Icon style={{ color: "#F4D35E" }}>
             <FontAwesomeIcon icon={faNotesMedical} />
           </Icon>
-          <h2>Investigations</h2>
+          <h3>Investigations</h3>
           <CardDropdown>
             <ul>
               <li>Complex lung function testing</li>

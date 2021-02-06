@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 import logo from "../../../images/grs_logo.png"
-import { yellow } from "../../../utils/colours"
+import { secondaryBlue } from "../../../utils/colours"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons"
 import {
@@ -10,7 +10,6 @@ import {
   LogoContainer,
   NavList,
   NavItem,
-  Logo,
   MobileMenu,
 } from "./styles"
 
@@ -18,10 +17,10 @@ const Navigation = ({ location }) => {
   const [navOpen, setNavOpen] = useState(false)
   const toggleNav = () => setNavOpen(!navOpen)
   const closeNav = () => setNavOpen(false)
-  const isHomePage = location && location.pathname === "/"
   const activeStyle = {
     color: "#2b71d4",
-    textDecoration: "underline"
+    textDecoration: "underline",
+    textDecorationColor: secondaryBlue
   }
 
   return (
@@ -29,7 +28,7 @@ const Navigation = ({ location }) => {
       <LogoNav>
         <LogoContainer>
           <Link to="/">
-            <Logo src={logo} alt="GRS logo" />
+            <img src={logo} alt="GRS logo" />
           </Link>
         </LogoContainer>
         <NavList navOpen={navOpen}>
@@ -51,7 +50,7 @@ const Navigation = ({ location }) => {
               to="/our-clinical-sleep-psychologist"
               activeStyle={activeStyle}
             >
-              Our sleep psychologist
+              Our clinical sleep psychologist
             </Link>
           </NavItem>
           <NavItem onClick={closeNav}>
@@ -60,8 +59,8 @@ const Navigation = ({ location }) => {
             </Link>
           </NavItem>
           <NavItem onClick={closeNav}>
-            <Link to="/contact-us" activeStyle={activeStyle}>
-              Contact us
+            <Link to="/find-us" activeStyle={activeStyle}>
+              Find us
             </Link>
           </NavItem>
         </NavList>

@@ -1,26 +1,23 @@
 import React from "react"
 import styled from "styled-components"
-import { gunmetalGrey } from "../../../utils/colours"
 import background from "../../../images/triangle-background.png"
 import { md } from "../../../utils/breakpoints"
+import { primaryBlue } from "../../../utils/colours"
 
 const Container = styled.div`
-  margin: 0;
+  margin: 6rem 0 0 0;
   padding: 1rem;
   width: 100%;
   text-align: center;
-  text-transform: uppercase;
-  height: 12rem;
+  height: 16rem;
   display: flex;
   justify-content: center;
-  background-image: url(${background});
-  background-position: left;
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-color: ${primaryBlue};
 
   h1 {
     align-self: center;
     color: white;
+    margin-top: 1rem;
   }
 
   @media ${md} {

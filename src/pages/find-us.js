@@ -1,16 +1,13 @@
 import React from "react"
 import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import {
-  faEnvelope,
-  faFax,
-  faPhone,
-  faMapMarkedAlt,
-} from "@fortawesome/free-solid-svg-icons"
+import { faMapMarkedAlt } from "@fortawesome/free-solid-svg-icons"
 import Layout from "../components/common/layout"
 import Header from "../components/common/Header"
 import { primaryBlue } from "../utils/colours"
+import { md } from "../utils/breakpoints"
 import { Container } from "../utils/sharedStyles"
+import map from "../images/gph_building_map.png"
 
 const ContactItem = styled.div`
   display: flex;
@@ -29,43 +26,29 @@ const ContactItem = styled.div`
   }
 `
 
-const Map = styled.iframe`
+const HospitalMap = styled.img`
+  @media ${md} {
+    max-width: 40rem;
+  }
+`
+
+const GoogleMap = styled.iframe`
   width: 100%;
+  height: 32rem;
+  margin-bottom: 0;
 `
 
 const Icon = styled(FontAwesomeIcon)`
-  font-size: 1.4rem;
+  font-size: 2rem;
   color: ${primaryBlue};
-  margin-right: 0.5rem;
+  margin-right: 1rem;
 `
 
-export default function ContactUs({ location }) {
+export default function FindUs({ location }) {
   return (
     <Layout location={location}>
-      <Header text="Contact us" />
+      <Header text="Find us" />
       <Container>
-        <ContactItem>
-          <Icon icon={faEnvelope} />
-          <p>
-            <a href="mailto:admin@grscentre.com.au">admin@grscentre.com.au</a>
-          </p>
-        </ContactItem>
-        <ContactItem>
-          <Icon icon={faFax} />
-          <p>07 33971499</p>
-        </ContactItem>
-        <ContactItem>
-          <Icon icon={faPhone} />
-          <p>07 33971488 | 07 33947597</p>
-          <small>*expect to have to leave a message</small>
-        </ContactItem>
-        <p>
-          One of our wonderful and hard working admin staff will return your
-          call as soon as possible
-        </p>
-        <img src="https://picsum.photos/380/200" />
-        <hr />
-        <h2>Find us</h2>
         <ContactItem>
           <Icon icon={faMapMarkedAlt} />
           <p>
@@ -79,6 +62,7 @@ export default function ContactUs({ location }) {
             <br />
           </p>
         </ContactItem>
+        <HospitalMap src={map} alt="Greenslopes Private Hospital map" />
         <p>
           Parking is readily available on site, and closest is Orange car park,
           up to $25 Enter Gate 1 off Newdegate St, directly opposite Hunter St,
@@ -92,7 +76,7 @@ export default function ContactUs({ location }) {
           Centre and Sleep Lab. We are the first consulting rooms on the left.
         </p>
       </Container>
-      <Map
+      <GoogleMap
         width="450"
         height="250"
         frameBorder="0"

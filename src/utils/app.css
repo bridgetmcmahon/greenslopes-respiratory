@@ -1,18 +1,77 @@
 * {
-  font-family: 'Open Sans', sans-serif;
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.4;
+  color: #68748d;
+}
+
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Poppins', sans-serif;
+  margin: 2.75rem 0 1rem;
+  font-family: 'Merriweather', serif;
+  font-weight: 400;
   color: #2B303A;
+}
+
+h1 {
+  font-size: 3.981rem;
+}
+
+h2 {
+  font-size: 2.4rem;
+}
+
+h3 {
+  font-size: 2.2rem;
+}
+
+h4 {
+  font-size: 2rem;
 }
 
 p, ul, li, small {
   color: #68748d;
-  line-height: 1.4rem;
 }
 
 ul {
   list-style: circle;
+}
+
+a {
+  color: #578EDD;
+}
+
+img {
+  max-width: 100%;
+}
+
+@media screen and (min-width: 960px) {
+  body {
+    font-size: 1.8rem;
+  }
+
+  h1 {
+    font-size: 4.883rem;
+  }
+
+  h2 {
+    font-size: 3.906rem;
+  }
+
+  h3 {
+    font-size: 3.125rem;
+  }
+
+  h4 {
+    font-size: 2.501rem;
+  }
 }

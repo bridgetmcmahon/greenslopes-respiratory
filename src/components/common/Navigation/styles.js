@@ -11,9 +11,9 @@ export const Nav = styled.nav`
   color: ${primaryBlue};
   padding: 0 1rem;
   width: 100vw;
-  height: 4rem;
+  height: 6rem;
   transition: 0.5s all ease;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 10;
 
@@ -31,7 +31,6 @@ export const LogoNav = styled.div`
   
   @media ${md} {
     padding-left: 2rem;
-    max-width: 96rem;
   }
 `
 
@@ -40,6 +39,12 @@ export const LogoContainer = styled.div`
   align-items: center;
   justify-content: center;
 
+  img {
+    max-height: 5rem;
+    max-width: 5rem;
+    padding: 0.5rem 0;
+    vertical-align: middle;
+  }
 `
 
 export const NavList = styled.ul`
@@ -54,7 +59,7 @@ export const NavList = styled.ul`
   width: 100%;
   height: calc(100vh - 4rem);
   position: absolute;
-  top: 4rem;
+  top: 6rem;
   left: -100%;
   list-style-type: none;
   transition: 0.5s all ease;
@@ -75,7 +80,7 @@ export const NavList = styled.ul`
     align-items: center;
     position: sticky;
     top: 0;
-    height: 4rem;
+    height: 6rem;
     font-size: 1.2rem;
   }
 `
@@ -83,47 +88,54 @@ export const NavList = styled.ul`
 export const NavItem = styled.li`
   display: flex;
   align-items: center;
-  font-size: 1.5rem;
-  height: 12vw;
-  padding: 0.5rem 1rem;
+  font-size: 1.8rem;
+  height: 6rem;
   width: 100%;
   border-bottom: 1px solid #efefef;
-
+  transition: 0.5s all ease;
+  
   &:hover {
     background-color: #f9f9f9;
   }
-
+  
   a {
+    padding: 0 1rem;
     text-decoration: none;
     color: ${primaryBlue};
     font-weight: 600;
+    height: fit-content;
+    width: 100%;
+    transition: 0.4s all ease;
 
     &:hover {
       cursor: pointer;
       color: #2b71d4;
+      padding-left: 1.5rem;
     }
   }
 
   @media ${md} {
     display: inline;
     padding: 1.4rem 1rem;
-    vertical-align: middle;
-    height: 4rem;
-    font-size: 1rem;
+    height: 6rem;
+    font-size: 1.6rem;
     position: relative;
     width: fit-content;
     border-bottom: none;
-  }
-`
 
-export const Logo = styled.img`
-  max-height: 4rem;
-  max-width: 4rem;
-  padding: 0.8rem 0;
+    a {
+      line-height: 3.2rem;
+
+      &:hover {
+        padding-left: 1rem;
+      }
+    }
+  }
 `
 
 export const MobileMenu = styled.div`
   color: ${primaryBlue};
+  font-size: 2.2rem;
 
   @media ${md} {
     display: none;

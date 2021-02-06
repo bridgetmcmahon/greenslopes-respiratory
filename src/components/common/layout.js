@@ -19,7 +19,7 @@ const Layout = ({ children, location }) => {
         <title>Greenslopes Respiratory</title>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans&display=swap"
           rel="stylesheet"
         />
       </Helmet>
