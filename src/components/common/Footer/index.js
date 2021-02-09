@@ -96,7 +96,6 @@ const FooterItem = styled.span`
     }
     &:last-of-type {
       margin-right: 0;
-      margin-bottom: 2rem;
     }
     &:hover {
       padding-left: 0;
