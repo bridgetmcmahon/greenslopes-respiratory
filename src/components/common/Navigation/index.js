@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
-import logo from "../../../images/grs_logo.png"
+import logo from "../../../images/simple_logo.png"
 import { secondaryBlue, darkBlue } from "../../../utils/colours"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons"

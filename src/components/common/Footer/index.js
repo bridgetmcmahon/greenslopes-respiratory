@@ -1,26 +1,26 @@
 import React from "react"
 import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import logo from "../../../images/grs_logo.png"
+import logo from "../../../images/simple_logo.png"
 import { primaryBlue, darkBlue } from "../../../utils/colours"
 import { faEnvelope, faFax, faPhone } from "@fortawesome/free-solid-svg-icons"
-import { md } from "../../../utils/breakpoints"
+import { md, lg } from "../../../utils/breakpoints"
 
 const Container = styled.div`
   background-color: #fafafa;
-  padding: 1rem;
+  padding: 2rem;
   color: #ddd;
   text-align: center;
   font-size: 1.8rem;
   line-height: 1.2;
 
-  @media ${md} {
-    padding: 2rem;
+  @media ${lg} {
+    padding: 3rem;
   }
 `
 
 const LogoWrapper = styled.div`
-  margin: 1rem auto;
+  margin: 0 auto 1rem auto;
   display: flex;
   vertical-align: middle;
   text-align: center;
@@ -83,6 +83,10 @@ const FooterItem = styled.span`
     padding-left: 0.5rem;
   }
 
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
   @media ${md} {
     margin: 0 1rem;
     width: auto;
@@ -92,6 +96,7 @@ const FooterItem = styled.span`
     }
     &:last-of-type {
       margin-right: 0;
+      margin-bottom: 2rem;
     }
     &:hover {
       padding-left: 0;

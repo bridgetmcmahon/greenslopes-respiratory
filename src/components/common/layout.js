@@ -21,12 +21,13 @@ const Layout = ({ children, location }) => {
   return (
     <React.Fragment>
       <Helmet>
-        <title>Greenslopes Respiratory</title>
+        <title>Greenslopes Respiratory & Sleep Centre</title>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
           href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap"
           rel="stylesheet"
         />
+        <link rel="icon" type="image/png" href="favicon.png" sizes="16x16" />
       </Helmet>
       <Container>
         <header>

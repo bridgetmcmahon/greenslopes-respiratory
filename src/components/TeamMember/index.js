@@ -4,7 +4,7 @@ import { md } from "../../utils/breakpoints"
 
 const Card = styled.div`
   max-width: ${props => (props.maxWidth ? props.maxWidth : "40rem")};
-  margin: 2rem auto 0 auto;
+  margin: 2rem 1rem 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -13,7 +13,6 @@ const Card = styled.div`
 
   img {
     border-radius: 100%;
-    box-shadow: 2px 2px 10px #cccccc;
     width: 14rem;
     height: 14rem;
     object-fit: cover;
@@ -35,7 +34,8 @@ const Card = styled.div`
   }
 
   @media ${md} {
-    min-width: 38rem
+    min-width: 38rem;
+    margin: 2rem 2rem 0 2rem;
   }
 `
 

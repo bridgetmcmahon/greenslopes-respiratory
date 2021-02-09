@@ -5,7 +5,7 @@ import { primaryBlue } from "../../../utils/colours"
 
 const Container = styled.div`
   margin: 6rem 0 0 0;
-  padding: 1rem;
+  padding: 2rem;
   width: 100%;
   text-align: center;
   height: 16rem;

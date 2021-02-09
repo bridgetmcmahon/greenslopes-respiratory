@@ -6,15 +6,11 @@ import Layout from "../components/common/layout"
 import Header from "../components/common/Header"
 import TeamMember from "../components/TeamMember"
 import { HR, TeamLink } from "../utils/sharedStyles"
-import { sm, md, lg } from "../utils/breakpoints"
+import { sm, lg } from "../utils/breakpoints"
 
 const Container = styled.div`
   width: 100%;
-  padding: 1rem;
-
-  @media ${md} {
-    padding: 2rem;
-  }
+  padding: 2rem;
 
   @media ${lg} {
     padding: 5rem;
@@ -29,7 +25,7 @@ const TeamWrapper = styled.div`
   @media ${sm} {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
   }
 `
 
@@ -38,35 +34,35 @@ export default function OurSpecialistPhysicians({ location }) {
     query teamImages {
       robyn: file(relativePath: { eq: "team/robyn_osullivan.jpg" }) {
         childImageSharp {
-          fixed(width: 130, height: 132) {
+          fixed(width: 140, height: 140) {
             ...GatsbyImageSharpFixed_withWebp_noBase64
           }
         }
       }
       dinithi: file(relativePath: { eq: "team/dinithi_samaratunga.png" }) {
         childImageSharp {
-          fixed(width: 130, height: 132) {
+          fixed(width: 140, height: 140) {
             ...GatsbyImageSharpFixed_withWebp_noBase64
           }
         }
       }
       tim: file(relativePath: { eq: "team/tim_edwards.jpg" }) {
         childImageSharp {
-          fixed(width: 130, height: 132) {
+          fixed(width: 140, height: 140) {
             ...GatsbyImageSharpFixed_withWebp_noBase64
           }
         }
       }
       kieren: file(relativePath: { eq: "team/kieren_brown.jpg" }) {
         childImageSharp {
-          fixed(width: 130, height: 132) {
+          fixed(width: 140, height: 140) {
             ...GatsbyImageSharpFixed_withWebp_noBase64
           }
         }
       }
       malcolm: file(relativePath: { eq: "team/malcolm_wilson.jpeg" }) {
         childImageSharp {
-          fixed(width: 130, height: 132) {
+          fixed(width: 140, height: 140) {
             ...GatsbyImageSharpFixed_withWebp_noBase64
           }
         }
@@ -81,7 +77,19 @@ export default function OurSpecialistPhysicians({ location }) {
       <Container>
         <TeamWrapper>
           <TeamMember>
-            <Img fixed={data.robyn.childImageSharp.fixed} alt="Dr Robyn O'Sullivan" />
+            <div
+              style={{
+                width: "14rem",
+                height: "14rem",
+                borderRadius: "100%",
+                boxShadow: "2px 2px 10px #cccccc",
+              }}
+            >
+              <Img
+                fixed={data.robyn.childImageSharp.fixed}
+                alt="Dr Robyn O'Sullivan"
+              />
+            </div>
             <h2>Dr Robyn O'Sullivan</h2>
             <div>
               <p>
@@ -111,7 +119,10 @@ export default function OurSpecialistPhysicians({ location }) {
             </div>
           </TeamMember>
           <TeamMember>
-            <Img fixed={data.dinithi.childImageSharp.fixed} alt="Dr Dinithi Samaratunga" />
+            <Img
+              fixed={data.dinithi.childImageSharp.fixed}
+              alt="Dr Dinithi Samaratunga"
+            />
             <h2>Dr Dinithi Samaratunga</h2>
             <div>
               <p>
@@ -167,14 +178,20 @@ export default function OurSpecialistPhysicians({ location }) {
             </div>
           </TeamMember>
           <TeamMember>
-            <Img fixed={data.kieren.childImageSharp.fixed} alt="Dr Kieren Brown" />
+            <Img
+              fixed={data.kieren.childImageSharp.fixed}
+              alt="Dr Kieren Brown"
+            />
             <h2>Dr Kieren Brown</h2>
             <div>
               <p>Kieren is a respiratory and sleep physician – VMO IGH</p>
             </div>
           </TeamMember>
           <TeamMember>
-            <Img fixed={data.malcolm.childImageSharp.fixed} alt="Dr Mal Wilson" />
+            <Img
+              fixed={data.malcolm.childImageSharp.fixed}
+              alt="Dr Mal Wilson"
+            />
             <h2>Dr Mal Wilson</h2>
             <div>
               <p>

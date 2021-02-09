@@ -1,7 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faMapMarkedAlt } from "@fortawesome/free-solid-svg-icons"
 import Layout from "../components/common/layout"
 import Header from "../components/common/Header"
 import { primaryBlue } from "../utils/colours"
@@ -58,12 +56,6 @@ const GoogleMap = styled.iframe`
   margin-bottom: -1rem;
 `
 
-const Icon = styled(FontAwesomeIcon)`
-  font-size: 3rem;
-  color: ${primaryBlue};
-  margin-right: 1rem;
-`
-
 export default function FindUs({ location }) {
   return (
     <Layout location={location}>
@@ -103,18 +95,6 @@ export default function FindUs({ location }) {
             </p>
           </div>
         </SplitContainer>
-        <FontAwesomeIcon
-          icon={faMapMarkedAlt}
-          style={{
-            position: "absolute",
-            bottom: "20rem",
-            right: "-15rem",
-            fontSize: "40rem",
-            color: "#f4f4f4",
-            zIndex: -1,
-            overflow: "hidden",
-          }}
-        />
       </Container>
       <GoogleMap
         width="450"

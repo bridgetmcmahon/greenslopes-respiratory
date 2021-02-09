@@ -6,15 +6,11 @@ export const Container = styled.div`
   margin: 0 auto;
   width: 100%;
   max-width: 96rem;
-  padding: 1rem;
+  padding: 2rem;
   overflow-x: hidden;
 
-  @media ${md} {
-    padding: 2rem;
-  }
-
   @media ${lg} {
-    padding: 5rem;
+    padding: 3rem;
   }
 `
 
@@ -48,5 +44,9 @@ export const TeamLink = styled.div`
 
   @media ${md} {
     margin: 3rem auto 1rem auto;
+  }
+
+  @media ${lg} {
+    margin-bottom: 0;
   }
 `

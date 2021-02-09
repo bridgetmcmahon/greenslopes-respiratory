@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import Layout from "../components/common/layout"
 import Header from "../components/common/Header"
-import { md } from "../utils/breakpoints"
+import { md, lg } from "../utils/breakpoints"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import {
   faLungs,
@@ -13,15 +13,18 @@ import {
 const Container = styled.div`
   max-width: 96rem;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 2rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
 
   @media ${md} {
-    padding: 2rem;
     flex-wrap: nowrap;
+  }
+
+  @media ${lg} {
+    padding: 3rem;
   }
 `
 

@@ -1,7 +1,7 @@
 import React from "react"
 import styled, { keyframes } from "styled-components"
 import Particles from "react-particles-js"
-import { md } from "../../utils/breakpoints"
+import { lg } from "../../utils/breakpoints"
 import { primaryBlue, lightGrey } from "../../utils/colours"
 import background from "../../images/triangle-background.png"
 
@@ -18,7 +18,7 @@ const Background = styled.div`
   margin-top: 6rem;
   width: 100%;
   height: calc(100vh - 14rem);
-  padding: 1rem;
+  padding: 2rem;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -69,7 +69,7 @@ const Background = styled.div`
 
   p {
     font-weight: 600;
-    animation-delay: 2s;
+    animation-delay: 1.5s;
     margin: 1rem auto 0rem auto;
     padding-bottom: 0.5rem;
     max-width: 90%;
@@ -84,11 +84,11 @@ const Background = styled.div`
     color: #e0d3de;
     padding-right: 5px;
     margin-bottom: 0.4rem;
-    animation-delay: 2.2s;
+    animation-delay: 2s;
   }
 
-  @media ${md} {
-    padding: 2rem;
+  @media ${lg} {
+    padding: 3rem;
     height: calc(100vh - 14rem);
   }
 `
