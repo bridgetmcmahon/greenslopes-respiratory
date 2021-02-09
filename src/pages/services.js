@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import styled from "styled-components"
 import Layout from "../components/common/layout"
 import Header from "../components/common/Header"
@@ -34,14 +34,6 @@ const Card = styled.div`
   margin: 1rem;
   min-width: 18rem;
   max-width: 40rem;
-
-  &:hover {
-    cursor: pointer;
-  }
-
-  svg {
-    text-align: center;
-  }
 
   h3 {
     margin-bottom: 0;

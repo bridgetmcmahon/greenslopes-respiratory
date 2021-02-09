@@ -1,6 +1,6 @@
 export const primaryBlue = "#578EDD"
 export const secondaryBlue = "#CDE4FF"
+export const darkBlue = "#2664ba"
 export const yellow = "#F4D35E"
 export const gunmetalGrey = "#2B303A"
 export const lightGrey = "#C1C8E4"
-export const fieryRose = "#FC6471"

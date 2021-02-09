@@ -1,12 +1,13 @@
 import styled from "styled-components"
 import { md, lg } from "../utils/breakpoints"
-import { primaryBlue, secondaryBlue, lightGrey } from "../utils/colours"
+import { primaryBlue, secondaryBlue } from "../utils/colours"
 
 export const Container = styled.div`
   margin: 0 auto;
   width: 100%;
   max-width: 96rem;
   padding: 1rem;
+  overflow-x: hidden;
 
   @media ${md} {
     padding: 2rem;

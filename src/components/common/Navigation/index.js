@@ -1,7 +1,7 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import logo from "../../../images/grs_logo.png"
-import { secondaryBlue } from "../../../utils/colours"
+import { secondaryBlue, darkBlue } from "../../../utils/colours"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons"
 import {
@@ -15,16 +15,35 @@ import {
 
 const Navigation = ({ location }) => {
   const [navOpen, setNavOpen] = useState(false)
+  const [hasScrolled, setHasScrolled] = useState(false)
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll)
+
+    return function cleanup() {
+      window.removeEventListener("scroll", handleScroll)
+    }
+  })
+
+  const handleScroll = () => {
+    if (window.pageYOffset > 20 && !hasScrolled) {
+      setHasScrolled(true)
+    }
+
+    if (window.pageYOffset < 20 && hasScrolled) {
+      setHasScrolled(false)
+    }
+  }
   const toggleNav = () => setNavOpen(!navOpen)
   const closeNav = () => setNavOpen(false)
   const activeStyle = {
-    color: "#2b71d4",
+    color: darkBlue,
     textDecoration: "underline",
     textDecorationColor: secondaryBlue
   }
 
   return (
-    <Nav>
+    <Nav hasScrolled={hasScrolled}>
       <LogoNav>
         <LogoContainer>
           <Link to="/">

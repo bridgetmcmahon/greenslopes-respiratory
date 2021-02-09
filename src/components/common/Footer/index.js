@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import logo from "../../../images/grs_logo.png"
-import { primaryBlue } from "../../../utils/colours"
+import { primaryBlue, darkBlue } from "../../../utils/colours"
 import { faEnvelope, faFax, faPhone } from "@fortawesome/free-solid-svg-icons"
 import { md } from "../../../utils/breakpoints"
 
@@ -20,7 +20,6 @@ const Container = styled.div`
 `
 
 const LogoWrapper = styled.div`
-  /* max-width: 15rem; */
   margin: 1rem auto;
   display: flex;
   vertical-align: middle;
@@ -46,16 +45,21 @@ const LogoWrapper = styled.div`
   }
 `
 
-const FooterList = styled.ul`
-  list-style: none;
+const FooterList = styled.div`
   padding: 0px;
   display: flex;
   align-items: center;
   flex-direction: column;
   margin: 0 auto;
+
+  @media ${md} {
+    flex-direction: row;
+    max-width: 72rem;
+    justify-content: space-around;
+  }
 `
 
-const FooterItem = styled.li`
+const FooterItem = styled.span`
   display: flex;
   margin-bottom: 2rem;
   width: 100%;
@@ -75,29 +79,29 @@ const FooterItem = styled.li`
     color: ${primaryBlue};
   }
 
-  i {
-    
-  }
-
   &:hover {
     padding-left: 0.5rem;
   }
 
   @media ${md} {
     margin: 0 1rem;
+    width: auto;
+
     &:first-of-type {
       margin-left: 0;
     }
     &:last-of-type {
       margin-right: 0;
     }
+    &:hover {
+      padding-left: 0;
+    }
   }
 `
 
 const Icon = styled(FontAwesomeIcon)`
-  color: ${primaryBlue};
   margin-right: 0.6rem;
-  color: #2664ba;
+  color: ${darkBlue};
 `
 
 const Divider = styled.span`

@@ -16,6 +16,7 @@ const Card = styled.div`
     box-shadow: 2px 2px 10px #cccccc;
     width: 14rem;
     height: 14rem;
+    object-fit: cover;
   }
 
   div,
@@ -38,11 +39,10 @@ const Card = styled.div`
   }
 `
 
-const TeamMember = ({ imageSrc, name, maxWidth, children }) => {
+const TeamMember = ({ maxWidth, children }) => {
   return (
     <Card maxWidth={maxWidth}>
-      <img src={imageSrc} alt={name} />
-      <div>{children}</div>
+      {children}
     </Card>
   )
 }

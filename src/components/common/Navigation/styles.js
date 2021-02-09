@@ -16,6 +16,8 @@ export const Nav = styled.nav`
   position: fixed;
   top: 0;
   z-index: 10;
+  ${props =>
+    props.hasScrolled && "box-shadow: 4px 4px 12px 0 rgba(0, 0, 0, 0.05)"};
 
   @media ${md} {
     padding: 0;

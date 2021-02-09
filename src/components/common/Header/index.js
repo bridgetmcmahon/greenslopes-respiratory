@@ -1,6 +1,5 @@
 import React from "react"
 import styled from "styled-components"
-import background from "../../../images/triangle-background.png"
 import { md } from "../../../utils/breakpoints"
 import { primaryBlue } from "../../../utils/colours"
 
@@ -18,6 +17,8 @@ const Container = styled.div`
     align-self: center;
     color: white;
     margin-top: 1rem;
+    text-decoration: underline;
+    text-decoration-color: #ABC7EE;
   }
 
   @media ${md} {

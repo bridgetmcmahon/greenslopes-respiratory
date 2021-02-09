@@ -9,6 +9,22 @@ import { md } from "../utils/breakpoints"
 import { Container } from "../utils/sharedStyles"
 import map from "../images/gph_building_map.png"
 
+const SplitContainer = styled.div`
+  @media ${md} {
+    display: flex;
+    justify-content: space-around;
+
+    div {
+      flex: 1 1 0;
+
+      &:first-of-type {
+        min-width: 55%;
+        margin-right: 2rem;
+      }
+    }
+  }
+`
+
 const ContactItem = styled.div`
   display: flex;
   flex-direction: row;
@@ -27,6 +43,10 @@ const ContactItem = styled.div`
 `
 
 const HospitalMap = styled.img`
+  &:hover {
+    cursor: pointer;
+  }
+
   @media ${md} {
     max-width: 40rem;
   }
@@ -35,11 +55,11 @@ const HospitalMap = styled.img`
 const GoogleMap = styled.iframe`
   width: 100%;
   height: 32rem;
-  margin-bottom: 0;
+  margin-bottom: -1rem;
 `
 
 const Icon = styled(FontAwesomeIcon)`
-  font-size: 2rem;
+  font-size: 3rem;
   color: ${primaryBlue};
   margin-right: 1rem;
 `
@@ -49,32 +69,52 @@ export default function FindUs({ location }) {
     <Layout location={location}>
       <Header text="Find us" />
       <Container>
-        <ContactItem>
-          <Icon icon={faMapMarkedAlt} />
-          <p>
-            Suite 3a Administration Building (near Emergency Centre)
-            <br />
-            Greenslopes Private Hospital
-            <br />
-            Newdegate St
-            <br />
-            Greenslopes 4120
-            <br />
-          </p>
-        </ContactItem>
-        <HospitalMap src={map} alt="Greenslopes Private Hospital map" />
-        <p>
-          Parking is readily available on site, and closest is Orange car park,
-          up to $25 Enter Gate 1 off Newdegate St, directly opposite Hunter St,
-          near Emergency Centre. Do not access GPH through the Main entrance
-          further up the hill. There is limited free on-street parking in
-          surrounding streets.
-        </p>
-        <p>
-          Use Administration entrance at the pedestrian crossing from Orange car
-          park in to GPH and then turn left down the corridor towards Emergency
-          Centre and Sleep Lab. We are the first consulting rooms on the left.
-        </p>
+        <SplitContainer>
+          <div>
+            <ContactItem>
+              <p>
+                Suite 3a Administration Building
+                <br />
+                (near Emergency Centre)
+                <br />
+                Greenslopes Private Hospital
+                <br />
+                Newdegate St
+                <br />
+                Greenslopes 4120
+                <br />
+              </p>
+            </ContactItem>
+            <HospitalMap src={map} alt="Greenslopes Private Hospital map" />
+          </div>
+          <div>
+            <p>
+              Parking is readily available on site, and closest is Orange car
+              park, up to $25 Enter Gate 1 off Newdegate St, directly opposite
+              Hunter St, near Emergency Centre. Do not access GPH through the
+              Main entrance further up the hill. There is limited free on-street
+              parking in surrounding streets.
+            </p>
+            <p>
+              Use Administration entrance at the pedestrian crossing from Orange
+              car park in to GPH and then turn left down the corridor towards
+              Emergency Centre and Sleep Lab. We are the first consulting rooms
+              on the left.
+            </p>
+          </div>
+        </SplitContainer>
+        <FontAwesomeIcon
+          icon={faMapMarkedAlt}
+          style={{
+            position: "absolute",
+            bottom: "20rem",
+            right: "-15rem",
+            fontSize: "40rem",
+            color: "#f4f4f4",
+            zIndex: -1,
+            overflow: "hidden",
+          }}
+        />
       </Container>
       <GoogleMap
         width="450"

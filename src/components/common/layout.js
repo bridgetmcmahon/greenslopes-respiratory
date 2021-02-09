@@ -10,6 +10,11 @@ const Container = styled.div`
   margin: 0;
   padding: 0;
   width: 100%;
+
+  main {
+    position: relative;
+    overflow-x: hidden;
+  }
 `
 
 const Layout = ({ children, location }) => {
@@ -19,7 +24,7 @@ const Layout = ({ children, location }) => {
         <title>Greenslopes Respiratory</title>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Merriweather&family=Open+Sans&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Montserrat&family=Open+Sans&display=swap"
           rel="stylesheet"
         />
       </Helmet>

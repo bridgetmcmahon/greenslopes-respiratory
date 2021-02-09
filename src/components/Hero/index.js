@@ -17,7 +17,7 @@ const clipText = keyframes`
 const Background = styled.div`
   margin-top: 6rem;
   width: 100%;
-  height: calc(100vh - 6rem);
+  height: calc(100vh - 14rem);
   padding: 1rem;
   text-align: center;
   display: flex;
@@ -25,7 +25,7 @@ const Background = styled.div`
   justify-content: center;
   position: relative;
 
-  div, h1, h2, p, small {
+  div:nth-of-type(2), h1, h2, p, small {
     color: white;
     animation-iteration-count: 1;
     animation-duration: 800ms;
@@ -35,7 +35,7 @@ const Background = styled.div`
     cursor: default;
   }
 
-  > div {
+  div:nth-of-type(2) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -48,12 +48,17 @@ const Background = styled.div`
   }
 
   h1 {
-    max-width: 40rem;
-    animation-delay: 0.5s;
+    max-width: 90%;
+    animation-delay: 0.3s;
     margin-bottom: 0.2rem;
+
+    span {
+      font-size: 1.8rem;
+    }
   }
 
   h2 {
+    animation-delay: 0.6s;
     font-family: 'Open Sans';
     font-size: 3rem;
     font-style: italic;
@@ -72,7 +77,6 @@ const Background = styled.div`
   }
 
   small {
-    font-family: "Oswald";
     display: inline-block;
     font-weight: 600;
     font-size: 1.4rem;
@@ -80,12 +84,12 @@ const Background = styled.div`
     color: #e0d3de;
     padding-right: 5px;
     margin-bottom: 0.4rem;
-    animation-delay: 1s;
+    animation-delay: 2.2s;
   }
 
   @media ${md} {
     padding: 2rem;
-    height: calc(100vh - 13.7rem);
+    height: calc(100vh - 14rem);
   }
 `
 
@@ -128,12 +132,13 @@ const Hero = () => {
         <h1>
           Greenslopes
           <br />
-          Respiratory & Sleep Centre
+          Respiratory & Sleep Centre{" "}
         </h1>
         <h2>Specialists who care</h2>
         <p>
           for expert consultation in the field of Respiratory and Sleep Medicine
         </p>
+        <small><em>est 2002</em></small>
         {/* <small>est. 2002</small> */}
         {/* <HR /> */}
       </div>
