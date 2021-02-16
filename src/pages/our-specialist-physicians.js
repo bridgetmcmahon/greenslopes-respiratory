@@ -1,11 +1,10 @@
 import React from "react"
 import { Link, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
 import styled from "styled-components"
 import Layout from "../components/common/layout"
 import Header from "../components/common/Header"
 import TeamMember from "../components/TeamMember"
-import { HR, TeamLink } from "../utils/sharedStyles"
+import { HR, TeamLink, TeamImage } from "../utils/sharedStyles"
 import { sm, lg } from "../utils/breakpoints"
 
 const Container = styled.div`
@@ -25,7 +24,7 @@ const TeamWrapper = styled.div`
   @media ${sm} {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
   }
 `
 
@@ -77,19 +76,10 @@ export default function OurSpecialistPhysicians({ location }) {
       <Container>
         <TeamWrapper>
           <TeamMember>
-            <div
-              style={{
-                width: "14rem",
-                height: "14rem",
-                borderRadius: "100%",
-                boxShadow: "2px 2px 10px #cccccc",
-              }}
-            >
-              <Img
-                fixed={data.robyn.childImageSharp.fixed}
-                alt="Dr Robyn O'Sullivan"
-              />
-            </div>
+            <TeamImage
+              fixed={data.robyn.childImageSharp.fixed}
+              alt="Dr Robyn O'Sullivan"
+            />
             <h2>Dr Robyn O'Sullivan</h2>
             <div>
               <p>
@@ -97,14 +87,14 @@ export default function OurSpecialistPhysicians({ location }) {
                 of GRSC. She has extensive experience in sleep disorders with
                 strong clinical and laboratory focus. Special interests include
                 dental appliances for obstructive sleep apnoea, complex sleep
-                disordered breathing, respiratory muscle and wall disorders,
-                narcolepsy and dyspnoea.She thoroughly enjoys her busy clinical
-                private practice, as well as being clinical director of NATA
-                accredited SleepCare Sleep Laboratories. She is a GPH supervisor
-                of both respiratory and sleep medicine physician training and
-                has research interests in mandibular advancement splints,
-                positional therapy and bilateral hypoglossal nerve stimulation
-                in OSA, PTSD and sleep.
+                disordered breathing, narcolepsy, respiratory muscle and chest
+                wall disorders, and dyspnoea. She thoroughly enjoys her busy
+                clinical private practice, as well as being clinical director of
+                NATA accredited SleepCare Sleep Laboratories. She is a GPH
+                supervisor of both respiratory and sleep medicine physician
+                training and has research interests in mandibular advancement
+                splints, positional therapy and bilateral hypoglossal nerve
+                stimulation in OSA, and PTSD and sleep.
               </p>
             </div>
           </TeamMember>
@@ -113,13 +103,27 @@ export default function OurSpecialistPhysicians({ location }) {
             <h2>Dr John Aukes</h2>
             <div>
               <p>
-                John is respiratory physician, partner Greenslopes Lung Function
-                laboratory
+                John graduated from the University of Queensland in1994. He
+                undertook Respiratory training in Brisbane, and has been working
+                in private practice since 2004. John is a member of the Thoracic
+                Society of Australia and New Zealand, Australian Medical
+                Association, European Respiratory Society, and World Association
+                for Bronchology &amp; Interventional Pulmonology. His special
+                interests include lung cancer, EBUS (endobronchial ultrasound),
+                and Interstitial Lung Diseases (ILD).
+              </p>
+              <p>
+                John works in full-time private practice at Greenslopes Private
+                Hospital. He held the position of Chair of the Respiratory Unit
+                at the hospital from 2006 to 2017. John is actively involved in
+                the teaching and supervision of advanced respiratory trainees,
+                as well as medical student teaching at Greenslopes Private
+                Hospital.
               </p>
             </div>
           </TeamMember>
           <TeamMember>
-            <Img
+            <TeamImage
               fixed={data.dinithi.childImageSharp.fixed}
               alt="Dr Dinithi Samaratunga"
             />
@@ -147,7 +151,7 @@ export default function OurSpecialistPhysicians({ location }) {
             </div>
           </TeamMember>
           <TeamMember>
-            <Img fixed={data.tim.childImageSharp.fixed} alt="Dr Tim Edwards" />
+            <TeamImage fixed={data.tim.childImageSharp.fixed} alt="Dr Tim Edwards" />
             <h2>Dr Tim Edwards</h2>
             <div>
               <p>
@@ -178,17 +182,28 @@ export default function OurSpecialistPhysicians({ location }) {
             </div>
           </TeamMember>
           <TeamMember>
-            <Img
+            <TeamImage
               fixed={data.kieren.childImageSharp.fixed}
               alt="Dr Kieren Brown"
             />
             <h2>Dr Kieren Brown</h2>
             <div>
-              <p>Kieren is a respiratory and sleep physician – VMO IGH</p>
+              <p>
+                Kieren is a Specialist Respiratory and Sleep Physician available
+                for consultation in all areas of respiratory and sleep medicine.
+                He has special interests in lung cancer, bronchoscopy and
+                pleural disease. He is a reporting physician for SleepCare and
+                has experience in non-respiratory sleep disorders.
+              </p>
+              <p>
+                Kieren also holds an appointment at Ipswich Hospital. He is
+                actively involved in the training of medical students and is an
+                Education Supervisor for the Physician training program.
+              </p>
             </div>
           </TeamMember>
           <TeamMember>
-            <Img
+            <TeamImage
               fixed={data.malcolm.childImageSharp.fixed}
               alt="Dr Mal Wilson"
             />

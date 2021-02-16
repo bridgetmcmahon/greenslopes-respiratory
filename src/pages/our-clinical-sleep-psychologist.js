@@ -4,7 +4,7 @@ import Img from "gatsby-image"
 import Layout from "../components/common/layout"
 import Header from "../components/common/Header"
 import TeamMember from "../components/TeamMember"
-import { Container } from "../utils/sharedStyles"
+import { Container, TeamImage } from "../utils/sharedStyles"
 import { HR, TeamLink } from "../utils/sharedStyles"
 
 export default function OurClinicalSleepPsychologist({ location }) {
@@ -25,8 +25,8 @@ export default function OurClinicalSleepPsychologist({ location }) {
       <Header text="Our clinical sleep psychologist" />
 
       <Container>
-        <TeamMember maxWidth="60rem">
-          <Img fixed={data.sara.childImageSharp.fixed} alt="Dr Sara Winter" />
+        <TeamMember maxWidth="60rem" centered>
+          <TeamImage fixed={data.sara.childImageSharp.fixed} alt="Dr Sara Winter" />
           <h2>Dr Sara Winter</h2>
           <div>
             <p>

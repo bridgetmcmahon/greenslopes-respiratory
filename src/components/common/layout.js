@@ -14,6 +14,7 @@ const Container = styled.div`
   main {
     position: relative;
     overflow-x: hidden;
+    overflow-y: hidden;
   }
 `
 

@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import Img from "gatsby-image"
 import { md, lg } from "../utils/breakpoints"
 import { primaryBlue, secondaryBlue } from "../utils/colours"
 
@@ -49,4 +50,11 @@ export const TeamLink = styled.div`
   @media ${lg} {
     margin-bottom: 0;
   }
+`
+
+export const TeamImage = styled(Img)`
+  width: 14rem;
+  height: 14rem;
+  border-radius: 100%;
+  box-shadow: 2px 2px 10px #cccccc;
 `

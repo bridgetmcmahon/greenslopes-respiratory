@@ -80,7 +80,7 @@ const FooterItem = styled.span`
   }
 
   &:hover {
-    padding-left: 0.5rem;
+    transform: translateX(5px);
   }
 
   &:last-of-type {
@@ -98,7 +98,7 @@ const FooterItem = styled.span`
       margin-right: 0;
     }
     &:hover {
-      padding-left: 0;
+      transform: translateY(-5px);
     }
   }
 `

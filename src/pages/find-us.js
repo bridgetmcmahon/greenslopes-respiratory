@@ -1,7 +1,10 @@
-import React from "react"
+import React, { useState } from "react"
 import styled from "styled-components"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faFilePdf } from "@fortawesome/free-solid-svg-icons"
 import Layout from "../components/common/layout"
 import Header from "../components/common/Header"
+import Modal from "../components/common/Modal"
 import { primaryBlue } from "../utils/colours"
 import { md } from "../utils/breakpoints"
 import { Container } from "../utils/sharedStyles"
@@ -31,7 +34,6 @@ const ContactItem = styled.div`
 
   p {
     display: inline-block;
-    margin: 0.5rem 0;
   }
 
   a {
@@ -50,6 +52,19 @@ const HospitalMap = styled.img`
   }
 `
 
+const Download = styled.p`
+  color: ${primaryBlue};
+
+  svg {
+    font-size: 2rem;
+    margin-right: 1rem;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+`
+
 const GoogleMap = styled.iframe`
   width: 100%;
   height: 32rem;
@@ -57,6 +72,10 @@ const GoogleMap = styled.iframe`
 `
 
 export default function FindUs({ location }) {
+  const [modalOpen, setModalOpen] = useState(false)
+
+  const toggleModal = () => setModalOpen(!modalOpen)
+
   return (
     <Layout location={location}>
       <Header text="Find us" />
@@ -77,7 +96,15 @@ export default function FindUs({ location }) {
                 <br />
               </p>
             </ContactItem>
-            <HospitalMap src={map} alt="Greenslopes Private Hospital map" />
+            <HospitalMap
+              src={map}
+              alt="Greenslopes Private Hospital map"
+              onClick={toggleModal}
+            />
+            <Download>
+              <FontAwesomeIcon icon={faFilePdf} />
+              Download the map
+            </Download>
           </div>
           <div>
             <p>
@@ -105,6 +132,11 @@ export default function FindUs({ location }) {
         src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDOQblyq2eUFRImZAFe6b0R0d3cgJXVUcs&q=place_id:ChIJCY8QOPZakWsRAKsg11ujAg8"
         allowFullScreen
       />
+      {modalOpen && (
+        <Modal closeModal={() => setModalOpen(false)}>
+          <img src={map} alt="Greenslopes Private Hospital Map" />
+        </Modal>
+      )}
     </Layout>
   )
 }

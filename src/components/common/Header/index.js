@@ -19,6 +19,7 @@ const Container = styled.div`
     margin-top: 1rem;
     text-decoration: underline;
     text-decoration-color: #ABC7EE;
+    line-height: 1.3;
   }
 
   @media ${md} {

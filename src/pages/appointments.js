@@ -17,8 +17,9 @@ export default function Appointments({ location }) {
         </p>
         <p>
           Patients will be contacted by phone to make appointments. Appointment
-          confirmation will be emailed with helpful information and a Patient
-          Information Sheet to be completed.
+          confirmation will be emailed with helpful information, a Patient
+          Information Sheet to be completed and any questionnaires that also
+          require completion.
         </p>
 
         <h3>What to bring – if applicable:</h3>
@@ -31,6 +32,7 @@ export default function Appointments({ location }) {
           <li>Lung function test reports</li>
           <li>Sleep study reports</li>
           <li>CPAP machine or SD card, mask and chinstrap</li>
+          <li>Completed questionnaires</li>
         </ul>
         <FontAwesomeIcon
           icon={faStethoscope}
@@ -41,7 +43,7 @@ export default function Appointments({ location }) {
             fontSize: "40rem",
             color: "#f4f4f4",
             zIndex: -1,
-            overflow: "hidden"
+            overflow: "hidden",
           }}
         />
       </Container>

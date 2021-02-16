@@ -112,7 +112,7 @@ export const NavItem = styled.li`
     &:hover {
       cursor: pointer;
       color: #2b71d4;
-      padding-left: 1.5rem;
+      transform: translateX(1rem);
     }
   }
 
@@ -127,10 +127,6 @@ export const NavItem = styled.li`
 
     a {
       line-height: 3.2rem;
-
-      &:hover {
-        padding-left: 1rem;
-      }
     }
   }
 `
