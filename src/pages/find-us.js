@@ -1,16 +1,18 @@
 import React, { useState } from "react"
+import { useStaticQuery } from "gatsby"
 import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faFilePdf } from "@fortawesome/free-solid-svg-icons"
+import { faFilePdf, faMapMarkedAlt } from "@fortawesome/free-solid-svg-icons"
 import Layout from "../components/common/layout"
 import Header from "../components/common/Header"
 import Modal from "../components/common/Modal"
 import { primaryBlue } from "../utils/colours"
 import { md } from "../utils/breakpoints"
-import { Container } from "../utils/sharedStyles"
+import { Container, Icon } from "../utils/sharedStyles"
 import map from "../images/gph_building_map.png"
 
 const SplitContainer = styled.div`
+  position: relative;
   @media ${md} {
     display: flex;
     justify-content: space-around;
@@ -52,8 +54,9 @@ const HospitalMap = styled.img`
   }
 `
 
-const Download = styled.p`
+const Download = styled.a`
   color: ${primaryBlue};
+  display: block;
 
   svg {
     font-size: 2rem;
@@ -68,11 +71,23 @@ const Download = styled.p`
 const GoogleMap = styled.iframe`
   width: 100%;
   height: 32rem;
-  margin-bottom: -1rem;
+  margin-bottom: -0.7rem;
+  border-bottom: 3px solid ${primaryBlue};
 `
 
 export default function FindUs({ location }) {
   const [modalOpen, setModalOpen] = useState(false)
+  const data = useStaticQuery(graphql`
+    {
+      allFile(filter: { sourceInstanceName: { eq: "documents" } }) {
+        edges {
+          node {
+            publicURL
+          }
+        }
+      }
+    }
+  `)
 
   const toggleModal = () => setModalOpen(!modalOpen)
 
@@ -101,7 +116,7 @@ export default function FindUs({ location }) {
               alt="Greenslopes Private Hospital map"
               onClick={toggleModal}
             />
-            <Download>
+            <Download href={data.allFile.edges[0].node.publicURL} target="_blank">
               <FontAwesomeIcon icon={faFilePdf} />
               Download the map
             </Download>
@@ -121,13 +136,13 @@ export default function FindUs({ location }) {
               on the left.
             </p>
           </div>
+          <Icon icon={faMapMarkedAlt} bottom="-2rem" />
         </SplitContainer>
       </Container>
       <GoogleMap
         width="450"
         height="250"
         frameBorder="0"
-        style={{ border: 0 }}
         allowFullScreen
         src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDOQblyq2eUFRImZAFe6b0R0d3cgJXVUcs&q=place_id:ChIJCY8QOPZakWsRAKsg11ujAg8"
         allowFullScreen
