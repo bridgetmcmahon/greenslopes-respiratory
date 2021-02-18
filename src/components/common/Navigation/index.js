@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
 import logo from "../../../images/simple_logo.png"
-import { secondaryBlue, darkBlue } from "../../../utils/colours"
+import { primaryBlue, secondaryBlue, darkBlue, aqua, orange, pastelYellow } from "../../../utils/colours"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons"
 import {
@@ -37,7 +37,7 @@ const Navigation = ({ location }) => {
   const toggleNav = () => setNavOpen(!navOpen)
   const closeNav = () => setNavOpen(false)
   const activeStyle = {
-    color: darkBlue,
+    color: aqua,
     textDecoration: "underline",
     textDecorationColor: secondaryBlue
   }

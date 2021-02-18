@@ -1,9 +1,8 @@
 import React from "react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faStethoscope } from "@fortawesome/free-solid-svg-icons"
 import Header from "../components/common/Header"
 import Layout from "../components/common/layout"
-import { Container } from "../utils/sharedStyles"
+import { Container, Icon } from "../utils/sharedStyles"
 
 export default function Appointments({ location }) {
   return (
@@ -34,18 +33,7 @@ export default function Appointments({ location }) {
           <li>CPAP machine or SD card, mask and chinstrap</li>
           <li>Completed questionnaires</li>
         </ul>
-        <FontAwesomeIcon
-          icon={faStethoscope}
-          style={{
-            position: "absolute",
-            bottom: "-2rem",
-            right: "-15rem",
-            fontSize: "40rem",
-            color: "#f4f4f4",
-            zIndex: -1,
-            overflow: "hidden",
-          }}
-        />
+        <Icon icon={faStethoscope} bottom="-1rem" />
       </Container>
     </Layout>
   )

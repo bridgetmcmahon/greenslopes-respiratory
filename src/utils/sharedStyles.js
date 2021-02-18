@@ -1,7 +1,9 @@
 import styled from "styled-components"
+import { Link } from "gatsby"
 import Img from "gatsby-image"
-import { md, lg } from "../utils/breakpoints"
-import { primaryBlue, secondaryBlue } from "../utils/colours"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { sm, md, lg } from "../utils/breakpoints"
+import { primaryBlue, secondaryBlue, aqua } from "../utils/colours"
 
 export const Container = styled.div`
   margin: 0 auto;
@@ -57,4 +59,36 @@ export const TeamImage = styled(Img)`
   height: 14rem;
   border-radius: 100%;
   box-shadow: 2px 2px 10px #cccccc;
+`
+
+export const Button = styled(Link)`
+  padding: 1.6rem 2rem;
+  border-radius: 1.6rem;
+  background-color: ${aqua};
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  width: fit-content;
+  display: block;
+`
+
+export const Icon = styled(FontAwesomeIcon)`
+  position: absolute;
+  bottom: ${props => props.bottom};
+  right: -3rem;
+  font-size: 20rem;
+  color: #f4f4f4;
+  z-index: -1;
+  overflow: hidden;
+
+  @media ${sm} {
+    font-size: 30rem;
+    right: -4rem;
+  }
+
+  @media ${md} {
+    font-size: 40rem;
+    right: -5rem;
+  }
 `

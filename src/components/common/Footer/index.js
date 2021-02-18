@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import logo from "../../../images/simple_logo.png"
-import { primaryBlue, darkBlue } from "../../../utils/colours"
+import { primaryBlue, darkBlue, orange } from "../../../utils/colours"
 import { faEnvelope, faFax, faPhone } from "@fortawesome/free-solid-svg-icons"
 import { md, lg } from "../../../utils/breakpoints"
 
@@ -20,7 +20,7 @@ const Container = styled.div`
 `
 
 const LogoWrapper = styled.div`
-  margin: 0 auto 1rem auto;
+  margin: 0 auto 2rem auto;
   display: flex;
   vertical-align: middle;
   text-align: center;
@@ -30,11 +30,11 @@ const LogoWrapper = styled.div`
   img {
     margin-right: 1rem;
     max-height: 4rem;
-    margin-bottom: 1rem;
   }
 
   > p {
     margin-top: 0;
+    margin-bottom: 0;
     font-style: italic;
     line-height: 1.15;
     text-align: center;
