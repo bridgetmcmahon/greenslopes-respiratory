@@ -38,6 +38,13 @@ export default function OurSpecialistPhysicians({ location }) {
           }
         }
       }
+      john: file(relativePath: { eq: "team/john_aukes.jpg" }) {
+        childImageSharp {
+          fixed(width: 140, height: 140) {
+            ...GatsbyImageSharpFixed_withWebp_noBase64
+          }
+        }
+      }
       dinithi: file(relativePath: { eq: "team/dinithi_samaratunga.png" }) {
         childImageSharp {
           fixed(width: 140, height: 140) {
@@ -46,6 +53,13 @@ export default function OurSpecialistPhysicians({ location }) {
         }
       }
       tim: file(relativePath: { eq: "team/tim_edwards.jpg" }) {
+        childImageSharp {
+          fixed(width: 140, height: 140) {
+            ...GatsbyImageSharpFixed_withWebp_noBase64
+          }
+        }
+      }
+      sophie: file(relativePath: { eq: "team/sophie_williams.jpeg" }) {
         childImageSharp {
           fixed(width: 140, height: 140) {
             ...GatsbyImageSharpFixed_withWebp_noBase64
@@ -99,7 +113,10 @@ export default function OurSpecialistPhysicians({ location }) {
             </div>
           </TeamMember>
           <TeamMember>
-            <img src={"https://picsum.photos/180"} alt="Dr John Aukes" />
+            <TeamImage
+              fixed={data.john.childImageSharp.fixed}
+              alt="Dr John Aukes"
+            />
             <h2>Dr John Aukes</h2>
             <div>
               <p>
@@ -151,7 +168,10 @@ export default function OurSpecialistPhysicians({ location }) {
             </div>
           </TeamMember>
           <TeamMember>
-            <TeamImage fixed={data.tim.childImageSharp.fixed} alt="Dr Tim Edwards" />
+            <TeamImage
+              fixed={data.tim.childImageSharp.fixed}
+              alt="Dr Tim Edwards"
+            />
             <h2>Dr Tim Edwards</h2>
             <div>
               <p>
@@ -168,7 +188,10 @@ export default function OurSpecialistPhysicians({ location }) {
             </div>
           </TeamMember>
           <TeamMember>
-            <img src="https://picsum.photos/180" alt="Dr Sophie Williams" />
+            <TeamImage
+              fixed={data.sophie.childImageSharp.fixed}
+              alt="Dr Sophie Williams"
+            />
             <h2>Dr Sophie Williams</h2>
             <div>
               <p>

@@ -1,6 +1,5 @@
 import React from "react"
 import { Link, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
 import Layout from "../components/common/layout"
 import Header from "../components/common/Header"
 import TeamMember from "../components/TeamMember"
