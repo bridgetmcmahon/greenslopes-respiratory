@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { useStaticQuery } from "gatsby"
 import Layout from "../components/common/layout"
 import Header from "../components/common/Header"
 import { md, lg } from "../utils/breakpoints"
@@ -8,6 +9,7 @@ import {
   faLungs,
   faBed,
   faNotesMedical,
+  faFilePdf,
 } from "@fortawesome/free-solid-svg-icons"
 
 const Container = styled.div`
@@ -40,7 +42,7 @@ const Card = styled.div`
 
   h3 {
     margin-bottom: 0;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-weight: 600;
   }
 
@@ -50,12 +52,12 @@ const Card = styled.div`
 `
 
 const CardDropdown = styled.div`
-  color: #68748D;
+  color: #68748d;
 
   ul {
     list-style-type: "";
     padding-left: 0;
-    
+
     li {
       padding-bottom: 1.1rem;
     }
@@ -73,6 +75,16 @@ const Icon = styled.div`
 `
 
 export default function Services({ location }) {
+  const data = useStaticQuery(graphql`
+    {
+      sleepStudyForm: file(
+        name: { eq: "SleepCare_sleep_study_referral_form" }
+      ) {
+        publicURL
+      }
+    }
+  `)
+
   return (
     <Layout location={location}>
       <Header text="Services" />
@@ -125,7 +137,21 @@ export default function Services({ location }) {
               <li>Bronchial provocation testing and FeNO</li>
               <li>Bronchoscopy</li>
               <li>Endobronchial ultrasound</li>
-              <li>Sleep studies – NATA accredited home and in-lab studies</li>
+              <li>
+                <a href="https://sleepcare.com.au/" target="_blank">
+                  Sleep studies
+                </a>{" "}
+                – NATA accredited home and in-lab studies
+              </li>
+              <li>
+                <a href={data.sleepStudyForm.publicURL} target="_blank">
+                  <FontAwesomeIcon
+                    icon={faFilePdf}
+                    style={{ marginRight: "0.5rem" }}
+                  />
+                  Download the Sleep study request form
+                </a>
+              </li>
             </ul>
           </CardDropdown>
         </Card>

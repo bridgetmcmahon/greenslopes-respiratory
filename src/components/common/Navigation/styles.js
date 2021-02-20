@@ -135,6 +135,10 @@ export const MobileMenu = styled.div`
   color: ${primaryBlue};
   font-size: 2.2rem;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   @media ${md} {
     display: none;
   }

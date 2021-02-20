@@ -61,18 +61,6 @@ export const TeamImage = styled(Img)`
   box-shadow: 2px 2px 10px #cccccc;
 `
 
-export const Button = styled(Link)`
-  padding: 1.6rem 2rem;
-  border-radius: 1.6rem;
-  background-color: ${aqua};
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  white-space: nowrap;
-  width: fit-content;
-  display: block;
-`
-
 export const Icon = styled(FontAwesomeIcon)`
   position: absolute;
   bottom: ${props => props.bottom};

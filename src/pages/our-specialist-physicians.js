@@ -66,7 +66,7 @@ export default function OurSpecialistPhysicians({ location }) {
           }
         }
       }
-      kieren: file(relativePath: { eq: "team/kieren_brown.jpg" }) {
+      kieren: file(relativePath: { eq: "team/kieren_brown.png" }) {
         childImageSharp {
           fixed(width: 140, height: 140) {
             ...GatsbyImageSharpFixed_withWebp_noBase64
