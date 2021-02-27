@@ -84,6 +84,7 @@ export const NavList = styled.ul`
     top: 0;
     height: 6rem;
     font-size: 1.2rem;
+    transition: none;
   }
 `
 

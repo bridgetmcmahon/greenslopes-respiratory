@@ -138,13 +138,21 @@ export default function Services({ location }) {
               <li>Bronchoscopy</li>
               <li>Endobronchial ultrasound</li>
               <li>
-                <a href="https://sleepcare.com.au/" target="_blank">
+                <a
+                  href="https://sleepcare.com.au/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Sleep studies
                 </a>{" "}
                 – NATA accredited home and in-lab studies
               </li>
               <li>
-                <a href={data.sleepStudyForm.publicURL} target="_blank">
+                <a
+                  href={data.sleepStudyForm.publicURL}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <FontAwesomeIcon
                     icon={faFilePdf}
                     style={{ marginRight: "0.5rem" }}

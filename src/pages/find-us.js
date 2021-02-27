@@ -90,10 +90,7 @@ export default function FindUs({ location }) {
       <Header text="Find us" />
       <Container>
         <SplitContainer>
-          <HospitalMap
-            src={map}
-            alt="Greenslopes Private Hospital map"
-          />
+          <HospitalMap src={map} alt="Greenslopes Private Hospital map" />
           <ContactItem>
             <p>
               Suite 3a Administration Building (near Emergency Centre)
@@ -105,7 +102,11 @@ export default function FindUs({ location }) {
               Greenslopes 4120
               <br />
             </p>
-            <Download href={data.gphMap.publicURL} target="_blank">
+            <Download
+              href={data.gphMap.publicURL}
+              target="_blank"
+              rel="noreferrer"
+            >
               <FontAwesomeIcon icon={faFilePdf} />
               Download the map
             </Download>
@@ -131,7 +132,6 @@ export default function FindUs({ location }) {
         frameBorder="0"
         allowFullScreen
         src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDOQblyq2eUFRImZAFe6b0R0d3cgJXVUcs&q=place_id:ChIJCY8QOPZakWsRAKsg11ujAg8"
-        allowFullScreen
       />
     </Layout>
   )

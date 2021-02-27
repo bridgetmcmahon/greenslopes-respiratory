@@ -18,7 +18,7 @@ const Container = styled.div`
   }
 `
 
-const Layout = ({ children, location }) => {
+const Layout = ({ children }) => {
   return (
     <React.Fragment>
       <Helmet>

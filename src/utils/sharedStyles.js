@@ -1,9 +1,8 @@
 import styled from "styled-components"
-import { Link } from "gatsby"
 import Img from "gatsby-image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { sm, md, lg } from "../utils/breakpoints"
-import { primaryBlue, secondaryBlue, aqua } from "../utils/colours"
+import { primaryBlue, secondaryBlue } from "../utils/colours"
 
 export const Container = styled.div`
   margin: 0 auto;
