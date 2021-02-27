@@ -131,7 +131,7 @@ export default function FindUs({ location }) {
         height="250"
         frameBorder="0"
         allowFullScreen
-        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDOQblyq2eUFRImZAFe6b0R0d3cgJXVUcs&q=place_id:ChIJCY8QOPZakWsRAKsg11ujAg8"
+        src={`https://www.google.com/maps/embed/v1/place?key=${process.env.GATSBY_GOOGLE_MAPS_API_KEY}&q=place_id:ChIJCY8QOPZakWsRAKsg11ujAg8`}
       />
     </Layout>
   )
