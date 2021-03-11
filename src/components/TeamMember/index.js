@@ -1,16 +1,16 @@
 import React from "react"
 import styled from "styled-components"
-import { md } from "../../utils/breakpoints"
+import { sm, md } from "../../utils/breakpoints"
 
 const Card = styled.div`
-  max-width: ${props => (props.maxWidth ? props.maxWidth : "40rem")};
-  margin: ${props => props.centered ? "2rem auto" : "2rem 1rem"};
-  padding-bottom: 2rem;
+  width: 100%;
+  max-width: ${props => (props.maxWidth ? props.maxWidth : "50rem")};
+  padding-bottom: 3rem;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  min-width: 30rem;
   flex: 1 1 0;
+  margin: 1rem auto;
 
   h2 {
     margin-bottom: 0;
@@ -39,8 +39,19 @@ const Card = styled.div`
   }
 
   @media ${md} {
-    min-width: 38rem;
-    ${props => !props.centered && `margin: 2rem 2rem 0 2rem`};
+    min-width: 40rem;
+    max-width: ${props => (props.maxWidth ? props.maxWidth : "42rem")};
+
+    ${props =>
+      props.centered
+        ? `margin: 2rem 0;`
+        : `
+      margin: 2rem 2rem 0 0;
+
+      &:nth-of-type(2n) {
+        margin: 2rem 0 0 2rem;
+      }
+    `};
   }
 `
 

@@ -1,30 +1,21 @@
 import React from "react"
-import { Link, useStaticQuery } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import Layout from "../components/common/layout"
 import Header from "../components/common/Header"
 import TeamMember from "../components/TeamMember"
-import { HR, TeamLink, TeamImage } from "../utils/sharedStyles"
-import { sm, lg } from "../utils/breakpoints"
-
-const Container = styled.div`
-  width: 100%;
-  padding: 2rem;
-
-  @media ${lg} {
-    padding: 5rem;
-  }
-`
+import { HR, TeamLink, TeamImage, Container } from "../utils/sharedStyles"
+import { md } from "../utils/breakpoints"
 
 const TeamWrapper = styled.div`
   margin: 0 auto;
   width: 100%;
   max-width: 96rem;
 
-  @media ${sm} {
+  @media ${md} {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
   }
 `
 
@@ -120,7 +111,7 @@ export default function OurSpecialistPhysicians({ location }) {
             <h2>Dr John Aukes</h2>
             <div>
               <p>
-                John graduated from the University of Queensland in1994. He
+                John graduated from the University of Queensland in 1994. He
                 undertook Respiratory training in Brisbane, and has been working
                 in private practice since 2004. John is a member of the Thoracic
                 Society of Australia and New Zealand, Australian Medical

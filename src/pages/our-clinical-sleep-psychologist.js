@@ -24,7 +24,7 @@ export default function OurClinicalSleepPsychologist({ location }) {
       <Header text="Our clinical sleep psychologist" />
 
       <Container>
-        <TeamMember maxWidth="60rem" centered>
+        <TeamMember maxWidth="96rem" centered>
           <TeamImage fixed={data.sara.childImageSharp.fixed} alt="Dr Sara Winter" />
           <h2>Dr Sara Winter</h2>
           <div>
