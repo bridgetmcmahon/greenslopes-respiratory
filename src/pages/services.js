@@ -55,7 +55,7 @@ const CardDropdown = styled.div`
   color: #68748d;
 
   ul {
-    list-style-type: "";
+    list-style-type: none;
     padding-left: 0;
 
     li {
