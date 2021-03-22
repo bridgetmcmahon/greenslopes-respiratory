@@ -1,5 +1,6 @@
 import styled, { keyframes } from "styled-components"
 import { secondaryBlue } from "../../utils/colours"
+import { md } from "../../utils/breakpoints"
 
 const clipText = keyframes`
   from {
@@ -108,8 +109,15 @@ export const Content = styled.div`
   padding: 2rem;
 
   img {
-    max-height: 10rem;
-    max-width: 10rem;
+    max-height: 7rem;
+    max-width: 7rem;
+  }
+
+  @media ${md} {
+    img {
+      max-height: 10rem;
+      max-height: 10rem;
+    }
   }
 `
 
