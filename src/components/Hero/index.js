@@ -1,7 +1,7 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-import { Background, Overlay, Content, Inner, HR } from "./styles"
-import whiteLogo from "../../images/grs_logo_white.png"
+import { Background, Overlay, Content, Inner, HorizontalRule } from "./styles"
+import WhiteLogo from "../../images/grs_logo_white.png"
 
 const Hero = () => {
   const data = useStaticQuery(graphql`
@@ -21,13 +21,13 @@ return (
       <Overlay>
         <Content>
           <Inner>
-            <img src={whiteLogo} alt="GRS logo" />
+            <img src={WhiteLogo} alt="GRS logo" />
             <h1>
               Greenslopes
               <br />
               Respiratory & Sleep Centre
             </h1>
-            <HR />
+            <HorizontalRule />
             <h2>Specialists who care</h2>
             <p>
               for expert consultation in the field of Respiratory and Sleep

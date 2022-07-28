@@ -16,7 +16,7 @@ export const Container = styled.div`
   }
 `
 
-export const HR = styled.div`
+export const HorizontalRule = styled.div`
   height: 3px;
   width: 100%;
   max-width: 20rem;

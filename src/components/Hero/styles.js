@@ -127,7 +127,7 @@ export const Inner = styled.div`
   margin: 0 auto;
 `
 
-export const HR = styled.div`
+export const HorizontalRule = styled.div`
   height: 0.5rem;
   width: 80%;
   background-color: ${secondaryBlue};

@@ -69,7 +69,7 @@ const GoogleMap = styled.iframe`
   border-bottom: 3px solid ${primaryBlue};
 `
 
-const HR = styled.div`
+const HorizontalRule = styled.div`
   height: 3px;
   width: 100%;
   margin: 2rem auto;
@@ -112,7 +112,7 @@ export default function FindUs({ location }) {
             </Download>
           </ContactItem>
         </SplitContainer>
-        <HR />
+        <HorizontalRule />
         <p>
           Parking is readily available on site, and closest is Orange car park,
           up to $25 Enter Gate 1 off Newdegate St, directly opposite Hunter St,

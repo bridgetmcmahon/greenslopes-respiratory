@@ -4,7 +4,7 @@ import styled from "styled-components"
 import Layout from "../components/common/layout"
 import Header from "../components/common/Header"
 import TeamMember from "../components/TeamMember"
-import { HR, TeamLink, TeamImage, Container } from "../utils/sharedStyles"
+import { HorizontalRule, TeamLink, TeamImage, Container } from "../utils/sharedStyles"
 import { md } from "../utils/breakpoints"
 
 const TeamWrapper = styled.div`
@@ -264,7 +264,7 @@ export default function OurSpecialistPhysicians({ location }) {
             </div>
           </TeamMember>
         </TeamWrapper>
-        <HR />
+        <HorizontalRule />
         <TeamLink>
           <Link to="/our-clinical-sleep-psychologist">
             Meet our clinical sleep psychologist

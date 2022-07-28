@@ -4,7 +4,7 @@ import Layout from "../components/common/layout"
 import Header from "../components/common/Header"
 import TeamMember from "../components/TeamMember"
 import { Container, TeamImage } from "../utils/sharedStyles"
-import { HR, TeamLink } from "../utils/sharedStyles"
+import { HorizontalRule, TeamLink } from "../utils/sharedStyles"
 
 export default function OurClinicalSleepPsychologist({ location }) {
   const data = useStaticQuery(graphql`
@@ -76,7 +76,7 @@ export default function OurClinicalSleepPsychologist({ location }) {
             </p>
           </div>
         </TeamMember>
-        <HR />
+        <HorizontalRule />
         <TeamLink>
           <Link to="/our-specialist-physicians">
             Meet our specialist physicians
