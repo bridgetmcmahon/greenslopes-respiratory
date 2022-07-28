@@ -1,5 +1,5 @@
 import React from "react"
-import { useStaticQuery } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import { Background, Overlay, Content, Inner, HR } from "./styles"
 import whiteLogo from "../../images/grs_logo_white.png"
 

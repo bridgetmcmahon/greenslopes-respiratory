@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { sm, md } from "../../utils/breakpoints"
+import { md } from "../../utils/breakpoints"
 
 const Card = styled.div`
   width: 100%;

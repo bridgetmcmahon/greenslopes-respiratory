@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import { useStaticQuery } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/common/layout"
 import Header from "../components/common/Header"
 import { md, lg } from "../utils/breakpoints"

@@ -64,7 +64,14 @@ export default function OurSpecialistPhysicians({ location }) {
           }
         }
       }
-      malcolm: file(relativePath: { eq: "team/malcolm_wilson.jpeg" }) {
+      rob: file(relativePath: { eq: "team/dr_robert_sheehy.jpg" }) {
+        childImageSharp {
+          fixed(width: 140, height: 140) {
+            ...GatsbyImageSharpFixed_withWebp_noBase64
+          }
+        }
+      }
+      sam: file(relativePath: { eq: "team/dr_sam_moore.JPG" }) {
         childImageSharp {
           fixed(width: 140, height: 140) {
             ...GatsbyImageSharpFixed_withWebp_noBase64
@@ -218,20 +225,41 @@ export default function OurSpecialistPhysicians({ location }) {
           </TeamMember>
           <TeamMember>
             <TeamImage
-              fixed={data.malcolm.childImageSharp.fixed}
-              alt="Dr Mal Wilson"
+              fixed={data.rob.childImageSharp.fixed}
+              alt="Dr Rob Sheehy"
             />
-            <h2>Dr Mal Wilson</h2>
+            <h2>Dr Rob Sheehy</h2>
             <div>
               <p>
-                Mal is a Specialist Physician with experience in a wide range of
-                Respiratory and Sleep Disorders. He has a special interest in
-                pleural disease, respiratory infection – in particular
-                mycobacterial disease – and sleep disordered breathing. He is
-                currently researching the management of positional
-                obstructive sleep apnoea and also holds part-time appointments
-                at Logan Hospital and the Metro South Clinical Tuberculosis
-                Service.
+                Rob is a Respiratory &amp; Sleep Physician available for clinic
+                consultations. Following his Medical Degree at the University of
+                Queensland Rob went on to complete his specialty training
+                locally including his Sleep Fellowship at the Princess Alexandra
+                Hospital. He is currently a Staff Specialist at the P.A.
+                Hospital and a Senior Lecturer for the University of Queensland.
+                He is a reporting physician for SleepCare Sleep Laboratories. He
+                is a member of the Thoracic Society of Australia &amp; New
+                Zealand, along with the Australasian Sleep Association.
+              </p>
+            </div>
+          </TeamMember>
+          <TeamMember>
+            <TeamImage
+              fixed={data.sam.childImageSharp.fixed}
+              alt="Dr Sam Moore"
+            />
+            <h2>Dr Sam Moore</h2>
+            <div>
+              <p>
+                Sam is a specialist Respiratory and Sleep Medicine physician. He
+                is currently available for consultation in Sleep Medicine. He
+                has experience with all sleep disorders, including complex sleep
+                disordered breathing. He is a reporting physician for SleepCare.
+              </p>
+              <p>
+                Sam also holds an appointment at the Princess Alexandra
+                Hospital. He is actively involved in the teaching of junior
+                medical officers and medical students.
               </p>
             </div>
           </TeamMember>
