@@ -1,10 +1,10 @@
 import React from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import styled from "styled-components"
 import Layout from "../components/common/layout"
 import Header from "../components/common/Header"
 import TeamMember from "../components/TeamMember"
-import { HorizontalRule, TeamLink, TeamImage, Container } from "../utils/sharedStyles"
+import { TeamImage, Container } from "../utils/sharedStyles"
 import { md } from "../utils/breakpoints"
 
 const TeamWrapper = styled.div`
@@ -65,13 +65,6 @@ export default function OurSpecialistPhysicians({ location }) {
         }
       }
       rob: file(relativePath: { eq: "team/dr_robert_sheehy.jpg" }) {
-        childImageSharp {
-          fixed(width: 140, height: 140) {
-            ...GatsbyImageSharpFixed_withWebp_noBase64
-          }
-        }
-      }
-      sam: file(relativePath: { eq: "team/dr_sam_moore.JPG" }) {
         childImageSharp {
           fixed(width: 140, height: 140) {
             ...GatsbyImageSharpFixed_withWebp_noBase64
@@ -243,33 +236,7 @@ export default function OurSpecialistPhysicians({ location }) {
               </p>
             </div>
           </TeamMember>
-          <TeamMember>
-            <TeamImage
-              fixed={data.sam.childImageSharp.fixed}
-              alt="Dr Sam Moore"
-            />
-            <h2>Dr Sam Moore</h2>
-            <div>
-              <p>
-                Sam is a specialist Respiratory and Sleep Medicine physician. He
-                is currently available for consultation in Sleep Medicine. He
-                has experience with all sleep disorders, including complex sleep
-                disordered breathing. He is a reporting physician for SleepCare.
-              </p>
-              <p>
-                Sam also holds an appointment at the Princess Alexandra
-                Hospital. He is actively involved in the teaching of junior
-                medical officers and medical students.
-              </p>
-            </div>
-          </TeamMember>
         </TeamWrapper>
-        <HorizontalRule />
-        <TeamLink>
-          <Link to="/our-clinical-sleep-psychologist">
-            Meet our clinical sleep psychologist
-          </Link>
-        </TeamLink>
       </Container>
     </Layout>
   )
