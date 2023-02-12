@@ -1,10 +1,11 @@
 import React from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import Layout from "../components/common/layout"
 import Header from "../components/common/Header"
 import TeamMember from "../components/TeamMember"
 import { Container, TeamImage } from "../utils/sharedStyles"
-import { HorizontalRule, TeamLink } from "../utils/sharedStyles"
+
+// TO DO: create a redirect to /our-specialist-physicians for this page 
 
 export default function OurClinicalSleepPsychologist({ location }) {
   const data = useStaticQuery(graphql`
@@ -76,12 +77,6 @@ export default function OurClinicalSleepPsychologist({ location }) {
             </p>
           </div>
         </TeamMember>
-        <HorizontalRule />
-        <TeamLink>
-          <Link to="/our-specialist-physicians">
-            Meet our specialist physicians
-          </Link>
-        </TeamLink>
       </Container>
     </Layout>
   )

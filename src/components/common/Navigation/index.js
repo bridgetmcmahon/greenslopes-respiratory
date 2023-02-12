@@ -65,14 +65,6 @@ const Navigation = ({ location }) => {
             </Link>
           </NavItem>
           <NavItem onClick={closeNav}>
-            <Link
-              to="/our-clinical-sleep-psychologist"
-              activeStyle={activeStyle}
-            >
-              Our clinical sleep psychologist
-            </Link>
-          </NavItem>
-          <NavItem onClick={closeNav}>
             <Link to="/appointments" activeStyle={activeStyle}>
               Appointments
             </Link>
